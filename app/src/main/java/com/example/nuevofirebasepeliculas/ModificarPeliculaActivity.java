@@ -120,10 +120,10 @@ public class ModificarPeliculaActivity extends AppCompatActivity {
         if(id_antiguo.equalsIgnoreCase(titulo))
         {
             myRef.child("Peliculashashmap").child(id_antiguo).removeValue();
-            Toast.makeText(this,"pelicula borrado correctamente",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Película eliminada",Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(this,"no se pudo borrar el pelicula",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"No se pudo eliminar la película",Toast.LENGTH_LONG).show();
         }
 
         // borramos la imagen del firebase store
@@ -134,7 +134,7 @@ public class ModificarPeliculaActivity extends AppCompatActivity {
         replyIntent.putExtra(EXTRA_POSICION_DEVUELTA, posicion);
         replyIntent.putExtra(EXTRA_TIPO, "borrado");
         setResult(RESULT_OK, replyIntent);
-               finish();
+        finish();
     }
     public void detalles_editar_pelicula(View view) {
         String titulo = String.valueOf(edt_detalles_titulo.getText());
@@ -145,7 +145,7 @@ public class ModificarPeliculaActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference();
         myRef.child("Peliculashashmap").child(id_antiguo).removeValue();
         myRef.child("Peliculashashmap").child(a.getTitulo()).setValue(a);
-        Toast.makeText(this,"pelicula editado correctamente",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Película modificada",Toast.LENGTH_LONG).show();
 
         if(imagen_seleccionada != null || !id_antiguo.equalsIgnoreCase(a.getTitulo())) {
             String carpeta = a.getTitulo();

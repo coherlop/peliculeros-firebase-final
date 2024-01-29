@@ -30,12 +30,12 @@
         <ImageView
             android:id="@+id/img_item_pelicula"
             android:layout_width="165dp"
-            android:layout_height="164dp"
+            android:layout_height="215dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:cropToPadding="false"
             android:foregroundGravity="center_horizontal"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/noimageicon" />
 
         <TextView

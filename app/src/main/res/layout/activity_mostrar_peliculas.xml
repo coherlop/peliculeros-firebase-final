@@ -22,21 +22,7 @@
         app:layout_constraintEnd_toStartOf="@+id/bt_buscar2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_Peliculas"
-        android:layout_width="377dp"
-        android:layout_height="615dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_buscar_titulo2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <Button
         android:id="@+id/bt_buscar2"
@@ -52,7 +38,20 @@
         app:layout_constraintBottom_toBottomOf="@+id/edt_buscar_titulo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edt_buscar_titulo2"
-        app:layout_constraintTop_toTopOf="@+id/edt_buscar_titulo2" />
+        app:layout_constraintTop_toTopOf="@+id/edt_buscar_titulo2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_Peliculas"
+        android:layout_width="428dp"
+        android:layout_height="650dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -70,4 +69,24 @@
         app:layout_constraintVertical_bias="0.942"
         app:maxImageSize="50dp"
         app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:onClick="refrescar"
+        app:backgroundTint="?android:attr/colorPressedHighlight"
+        app:backgroundTintMode="src_atop"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:maxImageSize="35dp"
+        app:srcCompat="@android:drawable/ic_popup_sync"
+        app:tint="#FFD180" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

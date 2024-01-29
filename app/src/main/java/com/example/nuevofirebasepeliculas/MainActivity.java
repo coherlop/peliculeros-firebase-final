@@ -82,54 +82,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void mostrar_Peliculas(View view) {
-        Intent intent = new Intent(this, MostrarPeliculas.class);
-        startActivity(intent);
-    }
-
-
     public void login(View view) {
         String email = String.valueOf(edt_login_email.getText());
         String password = String.valueOf(edt_login_clave.getText());
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.i("firebasedb", "¡Bienvenido!");
-                            Toast.makeText(MainActivity.this, "¡Bienvenido!", Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(MainActivity.this, MostrarPeliculas.class);
-                            startActivity(intent);
-                        } else {
-                            Log.i("firebasedb", "Login fallido", task.getException());
-                            Toast.makeText(MainActivity.this, "Login fallido", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.i("firebasedb", "¡Bienvenido!");
+                    Toast.makeText(MainActivity.this, "¡Bienvenido!", Toast.LENGTH_SHORT).show();
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Intent intent = new Intent(MainActivity.this, MostrarPeliculas.class);
+                    startActivity(intent);
+                } else {
+                    Log.i("firebasedb", "Login fallido", task.getException());
+                    Toast.makeText(MainActivity.this, "Login fallido", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
-
-//    public void registro(View view) {
-//        String email = String.valueOf(edt_login_email.getText()).trim();
-//        String password = String.valueOf(edt_login_clave.getText());
-//        mAuth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            Log.i("firebase1", "Registro exitoso");
-//                            Toast.makeText(MainActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent(MainActivity.this, MostrarPeliculas.class);
-//                            startActivity(intent);
-//                        } else {
-//                            Log.i("firebase1", "Registro fallido", task.getException());
-//                            Toast.makeText(MainActivity.this, "Registro fallido", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
-//
-//    }
 
     public void cerrarSesion(View view) {
         FirebaseAuth.getInstance().signOut();

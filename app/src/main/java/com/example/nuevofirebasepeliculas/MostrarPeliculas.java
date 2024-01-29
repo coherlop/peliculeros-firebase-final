@@ -108,7 +108,7 @@ public class MostrarPeliculas extends AppCompatActivity {
                 for (DataSnapshot keynode : snapshot.getChildren()) {
                     keys1.add(keynode.getKey());
                     Pelicula a = keynode.getValue(Pelicula.class);
-                    if(a.getTitulo().contains(texto)) {
+                    if(a.getTitulo().toLowerCase().contains(texto.toLowerCase())) {
                         Peliculas1.add(keynode.getValue(Pelicula.class));
                     }
                 }
@@ -151,6 +151,17 @@ public class MostrarPeliculas extends AppCompatActivity {
     protected void onRestart() {
         this.recreate();
         super.onRestart();
+    }
+
+    //metodo para evitar que se pulse el botón atrás
+    public void onBackPressed(){
+    }
+
+    //para refrescar el activity manualmente si firebase tarda en cargar las imágenes
+    public void refrescar(View view) {
+        finish();
+        startActivity(getIntent());
+        this.overridePendingTransition(0, 0);
     }
 
 }

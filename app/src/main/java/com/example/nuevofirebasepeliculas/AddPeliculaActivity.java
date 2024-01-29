@@ -72,7 +72,7 @@ public class AddPeliculaActivity extends AppCompatActivity {
             String carpeta = a.getTitulo();
             ImagenesFirebase.subirFoto(carpeta,a.getTitulo(), img_add_pelicula);
         }
-
+        finish();
     }
 
     //--------------------------------------------------------------------------
