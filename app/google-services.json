@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642155165738",
+    "project_id": "nuevofirebasepeliculas",
+    "storage_bucket": "nuevofirebasepeliculas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642155165738:android:06513705331667e2feab53",
+        "android_client_info": {
+          "package_name": "com.example.nuevofirebasepeliculas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjB9PsLKCX6evslPYhucdidJVuM1pJwWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
